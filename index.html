@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <title>Calculadora de margem</title>
+  </head>
+  <body>
+    <main class="container">
+      <div class="calculator">
+        <h2>Calculo de orçamentos</h2>
+
+        <div class="input-box">
+          <div class="input-field">
+            <label for="valor-custo">Custo R$:</label>
+            <input type="text" placeholder="R$ 30.000,00" id="valor-custo" />
+          </div>
+          <div class="input-field">
+            <label for="valor-margem">Margem %:</label>
+            <input type="number" value="80" id="valor-margem" />
+          </div>
+
+          <div class="margem-result">
+            <h4>Valor com a margem</h4>
+            <span id="totalmargem"> </span>
+          </div>
+
+          <div class="input-field">
+            <label for="valor-seguro">Seguro %:</label>
+            <input type="number" value="0.65" id="valor-seguro" />
+          </div>
+        </div>
+
+        <div class="result">
+          <h4>Total</h4>
+          <span id="total"> </span>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      let inputcusto = document.getElementById("valor-custo");
+      let inputmargem = document.getElementById("valor-margem");
+      let inputseguro = document.getElementById("valor-seguro");
+
+      function calculator_event (event) {
+        let valuecusto = parseFloat(inputcusto.value);
+        let valuemargem = parseFloat(inputmargem.value);
+        let valueseguro = parseFloat(inputseguro.value);
+
+        if(isNaN(valuecusto)){
+          valuecusto = 0;
+        }
+
+        let customargem = valuecusto + (valuecusto * valuemargem) / 100;
+
+        document.getElementById("totalmargem").innerHTML =
+          "R$" + customargem.toFixed(2);
+
+        let custosegurototal = customargem + (customargem * valueseguro / 100);
+
+        document.getElementById("total").innerHTML =
+          "R$" + custosegurototal.toFixed(2);
+      }
+      inputcusto.addEventListener("input", calculator_event);
+      inputmargem.addEventListener("input", calculator_event);
+      inputseguro.addEventListener("input", calculator_event);
+    </script>
+  </body>
+</html>
