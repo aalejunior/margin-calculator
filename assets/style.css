@@ -1,60 +1,59 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;500;700&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
-:root{
-  --linear-gradient: linear-gradient(-8deg,#77d64a,#0F161D);
+:root {
+  --linear-gradient: linear-gradient(-8deg, #77d64a, #0f161d);
 }
 
-.container{
+.container {
   width: 100%;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   color: aliceblue;
-  background: var(--linear-gradient)
+  background: var(--linear-gradient);
 }
 
-.calculator{
+.calculator {
   background-color: #303030;
   padding: 40px;
   border-radius: 10px;
-  box-shadow: 10px 10px 10px rgba(0,0,0,0,323);
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0, 323);
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
 
-
-.margem-result,h4{
+.margem-result,
+h4 {
   font-size: 12px;
   font-weight: 200;
 }
 
-.input-box{
+.input-box {
   font-weight: 300;
   display: flex;
   flex-direction: column;
   gap: 25px;
 }
 
-.input-field{
+.input-field {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
-.input-field label{
+.input-field label {
   font-size: 16px;
   color: #c8c3ce;
-
 }
 
-.input-field input{
+.input-field input {
   background-color: transparent;
   border: none;
   border-bottom: 1px solid #c9c8ce;
@@ -64,10 +63,12 @@
   padding: 5px;
 }
 
-@media (max-width:768px) {
-  .container{
-    height: 100vh;
+@media (max-width: 768px) {
+  .container {
     width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-  
 }
